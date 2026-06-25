@@ -1,0 +1,14 @@
+{
+  "name": "job-application-builder-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local Claude Code workspace for source-grounded resume and cover-letter drafting.",
+  "scripts": {
+    "check": "python3 scripts/check_context.py",
+    "validate:application": "python3 scripts/validate_application.py",
+    "render": "node Context/resume_style.js"
+  },
+  "dependencies": {
+    "docx": "^8.5.0"
+  }
+}

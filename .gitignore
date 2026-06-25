@@ -1,0 +1,67 @@
+# ── Build / OS junk ───────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.tmp
+.DS_Store
+__MACOSX/
+.heartbeat
+logs/
+*.log
+.env
+node_modules/
+pnpm-lock.yaml
+
+# ── Resume builder: personal + outputs (created by /setup, per-user) ──────────
+Context/Master Profile.md
+inputs/*.md
+inputs/*.txt
+!inputs/.gitkeep
+outputs/
+Archive/
+Archive.zip
+
+# ── Job scraper: pipeline run artifacts (regenerated each run) ────────────────
+run/
+run.stale_*/
+run.lock*
+*.bak
+*.jsonl
+
+# ── Job scraper: scratch files ───────────────────────────────────────────────
+scored.json
+scored-run-*.json
+regen_input.txt
+rescrape_targets.json
+rescore-results.md
+rescore/
+_*.txt
+empty_new.json
+untracked-folders.csv
+
+# ── Job scraper: personal runtime data (NEVER commit) ─────────────────────────
+Job Scout Jobs.xlsx
+Job Scout Jobs.bak.xlsx
+*.bak.xlsx
+job-scout-service.log
+data.json
+data.json.*
+job-scout-applied.json
+job-scout-state.json
+job-scout-seen.json
+job-scout-seen.json.*
+job-scout-stars.json
+job-scout-status.json
+job-scout-overrides.json
+job-scout-order.json
+job-scout-alerted.json
+commute_map.json
+snapshots/
+run_summaries/
+reports/
+# personal API token is stored OUTSIDE the repo (~/.config/job-scout/apify_token)
+
+# ── Backup/scratch variants ──────────────────────────────────────────────────
+*.bak2
+*.bak3
+*.pre-restore
+*.bad

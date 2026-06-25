@@ -1,0 +1,27 @@
+{
+  "_README": "TEMPLATE starter list of target employers for direct ATS scraping. Run /setup or edit by hand. Keep the schema for each entry: name, ats, atsSlug, lane, notes. ats values: Greenhouse, Lever, Ashby, Workday, iCIMS, Proprietary, Other, None. atsSlug is the company's slug on its public board (Greenhouse/Lever/Ashby only); blank = non-public ATS or no board found. The examples below are real public boards you can keep, replace, or add to.",
+  "_notes": "Target employer list for direct career page / ATS scraping. ATS values: Greenhouse, Lever, Ashby, Workday, iCIMS, Proprietary, Other, None. atsSlug populated for Greenhouse/Lever/Ashby; blank = uses non-public ATS or no board found.",
+  "employers": [
+    {
+      "name": "Example Greenhouse Co",
+      "ats": "Greenhouse",
+      "atsSlug": "stripe",
+      "lane": "Example Lane A",
+      "notes": "Replace with a real company. atsSlug is the path segment in boards.greenhouse.io/<slug>."
+    },
+    {
+      "name": "Example Lever Co",
+      "ats": "Lever",
+      "atsSlug": "plaid",
+      "lane": "Example Lane A",
+      "notes": "Replace with a real company. atsSlug is the path segment in jobs.lever.co/<slug>."
+    },
+    {
+      "name": "Example Ashby Co",
+      "ats": "Ashby",
+      "atsSlug": "notion",
+      "lane": "Example Lane B",
+      "notes": "Replace with a real company. atsSlug is the path segment in jobs.ashbyhq.com/<slug>."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.jobscout.alerts</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>__SCOUT_DIR__/scripts/run_pipeline.sh</string>
+    <string>alerts</string>
+  </array>
+
+  <!-- Once daily: 4:00am -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key><integer>4</integer>
+    <key>Minute</key><integer>0</integer>
+  </dict>
+
+  <key>RunAtLoad</key>
+  <false/>
+
+  <key>StandardOutPath</key>
+  <string>__SCOUT_DIR__/logs/launchd-alerts.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>__SCOUT_DIR__/logs/launchd-alerts.err.log</string>
+</dict>
+</plist>

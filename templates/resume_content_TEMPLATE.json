@@ -1,0 +1,37 @@
+{
+  "name": "{{FULL_NAME}}",
+  "contact": "{{CITY_STATE}}  |  {{EMAIL}}  |  {{PHONE}}  |  {{LINKEDIN_URL}}",
+  "headline": {
+    "bold": "{{HEADLINE_TITLE}}",
+    "rest": "{{HEADLINE_DESCRIPTORS}}"
+  },
+  "sections": [
+    {
+      "type": "summary",
+      "heading": "SUMMARY",
+      "body": "Replace with a source-grounded, role-targeted summary."
+    },
+    {
+      "type": "capabilities",
+      "heading": "CORE CAPABILITIES",
+      "items": [
+        { "label": "Knowledge Operations", "rest": "content governance, support self-service, knowledge lifecycle" }
+      ]
+    },
+    {
+      "type": "experience",
+      "heading": "PROFESSIONAL EXPERIENCE",
+      "companies": []
+    },
+    {
+      "type": "lines",
+      "heading": "EDUCATION",
+      "lines": []
+    },
+    {
+      "type": "lines",
+      "heading": "CERTIFICATIONS",
+      "lines": []
+    }
+  ]
+}

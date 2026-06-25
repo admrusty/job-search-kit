@@ -1,0 +1,109 @@
+{
+  "_README": "TEMPLATE — run /setup in Claude Code to fill this in, or edit by hand. Keys/structure are fixed; replace the placeholder values with your own. JSON has no comments, so guidance lives in _README / _comment string fields.",
+  "user": {
+    "_comment": "Your name and home location. Used for display and commute/geo scoring.",
+    "name": "",
+    "location": "",
+    "timezone": "America/Los_Angeles"
+  },
+  "compensation": {
+    "_comment": "baseSalaryFloor is the minimum the salary high-end must reach. contractAdjustmentFactor accounts for no benefits/bonus/PTO. Set to your own numbers.",
+    "baseSalaryFloorRemote": 100000,
+    "baseSalaryFloorOC": 100000,
+    "targetTotalComp": 150000,
+    "contractAdjustmentFactor": 0.78,
+    "notes": "baseSalaryFloor is the minimum the salary high-end must reach. contractAdjustmentFactor accounts for no benefits/bonus/PTO."
+  },
+  "geo": {
+    "_comment": "homeCity/homeState drive commute estimates for onsite/hybrid roles. Leave homeCity empty to disable commute scoring (remote-only). commuteFail=flag warns but still alerts; set to 'reject' to drop over-limit commutes.",
+    "homeCity": "",
+    "homeState": "",
+    "commuteMaxMinutes": 40,
+    "commuteFail": "flag",
+    "preferredDirection": "",
+    "caEligibleRequired": false,
+    "notes": "commuteFail=flag means over-limit commutes get a warning but still alert."
+  },
+  "schedule": {
+    "times": ["04:05", "15:00"],
+    "timezone": "America/Los_Angeles",
+    "jitterMinutes": 5
+  },
+  "search": {
+    "_comment": "LinkedIn search queries (only used if Apify is configured). Replace keywords with your own role terms. The ATS scraper uses wideScraper.titleKeywords below, not these.",
+    "remote": {
+      "keywords": "\"example role one\" OR \"example role two\"",
+      "locationId": "",
+      "f_WT": "2",
+      "f_TPR": "r129600",
+      "count": 1000
+    },
+    "orangeCounty": {
+      "keywords": "\"example role one\" OR \"example role two\"",
+      "location": "",
+      "f_WT": "1,3",
+      "f_TPR": "r129600",
+      "distance": "25",
+      "count": 1000
+    }
+  },
+  "targetLanes": [
+    "Example Lane A",
+    "Example Lane B"
+  ],
+  "deprioritizedRoles": [
+    "Example role type to deprioritize"
+  ],
+  "alerts": {
+    "minimumScore": 7,
+    "maxAgeHours": 36,
+    "allowUnknownSalary": true,
+    "allowContractUnknownBenefits": true,
+    "requireGeoFit": true,
+    "requireNotApplied": true,
+    "requireNotCaExcluded": false,
+    "requireNotUserDismissed": true
+  },
+  "seenIds": {
+    "maxIds": 25000,
+    "minimumRetentionDays": 90
+  },
+  "metadataFilter": {
+    "_comment": "Tuning for which LinkedIn postings get a full description fetch. Only used with Apify.",
+    "fetchDescriptionScoreThreshold": 3,
+    "fetchDescriptionScoreWithTitleKeywords": 2,
+    "titleKeywordsForLowScoreFetch": [
+      "manager", "senior", "lead", "program", "product"
+    ],
+    "auditSampleSize": 7
+  },
+  "slackChannel": "",
+  "gmailSync": false,
+
+  "wideScraper": {
+    "_comment": "titleKeywords are the substrings the free ATS scraper matches job titles against (case-insensitive). Replace with terms relevant to the roles you want.",
+    "workers": 10,
+    "maxAgeDays": 1.5,
+    "titleKeywords": [
+      "example keyword one",
+      "example keyword two",
+      "program manager"
+    ]
+  },
+  "thirdPartyPosters": [
+    "Ladders", "The Ladders",
+    "Jobgether",
+    "Jobs via Dice", "Dice",
+    "Lensa",
+    "ZipRecruiter",
+    "CareerBuilder",
+    "Randstad",
+    "TEKsystems",
+    "Insight Global",
+    "Kforce",
+    "Beacon Hill",
+    "Jobot",
+    "Vaco",
+    "CyberCoders"
+  ]
+}
