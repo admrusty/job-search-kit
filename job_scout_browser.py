@@ -3725,12 +3725,20 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def main():
-    if not os.path.exists(XLSX):
-        sys.exit(f"Can't find {XLSX}\nPut this script in the same folder as 'Job Scout Jobs.xlsx'.")
+    # The dashboard reads data.json (primary) and falls back to the legacy xlsx.
+    # It only needs ONE of them; a brand-new install has neither until the first scrape.
+    if not os.path.exists(DATA_JSON) and not os.path.exists(XLSX):
+        sys.exit(
+            "No jobs found yet.\n"
+            "Run a scrape first — `/scrape` in Claude Code, or "
+            "`bash scripts/run_pipeline.sh wide` (free, no accounts).\n"
+            "The dashboard opens automatically once data.json exists."
+        )
+    source = DATA_JSON if os.path.exists(DATA_JSON) else XLSX
     url = f"http://127.0.0.1:{PORT}/"
     print("\n  Job Scout Browser")
     print("  " + "-" * 40)
-    print(f"  Reading:  {XLSX}")
+    print(f"  Reading:  {source}")
     print(f"  Open:     {url}")
     print("  Stop:     press Ctrl+C in this window")
     print("  " + "-" * 40 + "\n")
